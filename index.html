@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="<%= languageCode %>" dir="<%= languageDirection %>">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Yammer</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="origin-when-cross-origin" />
+  <meta name="yamjs-revision" content="<%= revision %>">
+</head>
+
+<body>
+  <div id="yammer-embed-container" style="width: 300px; height: 400px;">
+    <!-- <iframe height="500px;" style="width: 1px; min-width: 100%;" scrolling="no"
+      src="https://www.yammer.com/embed-feed?broadcastId=cea6092f-df95-4a40-858f-0cf2021df1c7&container=%23yammer-embed&bust=1558121730586"></iframe> -->
+  </div>
+
+  <script type="text/javascript" src="https://s0.assets-yammer.com/assets/platform_embed.js"></script>
+  <script type="text/javascript">
+    yam.connect.embedFeed({
+      "broadcastId": 'cea6092f-df95-4a40-858f-0cf2021df1c7',
+      "container": "#yammer-embed-container",
+      "config": {
+        "use_sso": false,
+        "header": true,
+        "footer": true,
+        "showOpenGraphPreview": false,
+        "defaultToCanonical": false,
+        "hideNetworkName": false,
+        "theme": "light"
+      },
+    });
+  </script>
+</body>
+
+</html>
